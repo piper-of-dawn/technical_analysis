@@ -4,7 +4,7 @@ const data1 = [
    {ser1: 2, ser2: 16},
    {ser1: 3, ser2: 8}
 ];
-const raw = d3.csv("https://raw.githubusercontent.com/piper-of-dawn/technical_analysis/main/raw.csv?token=AQPBMVSGK3NT532EM4R6K23BRC2WC")
+const raw = d3.csv("https://raw.githubusercontent.com/piper-of-dawn/technical_analysis/main/raw.csv")
 const data2 = [
    {ser1: 1, ser2: 7},
    {ser1: 4, ser2: 1},
