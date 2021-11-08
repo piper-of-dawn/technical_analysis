@@ -4,12 +4,14 @@ const data1 = [
    {ser1: 2, ser2: 16},
    {ser1: 3, ser2: 8}
 ];
-
+const raw = d3.csv("https://raw.githubusercontent.com/piper-of-dawn/technical_analysis/main/raw.csv?token=AQPBMVSGK3NT532EM4R6K23BRC2WC")
 const data2 = [
    {ser1: 1, ser2: 7},
    {ser1: 4, ser2: 1},
    {ser1: 6, ser2: 8}
 ];
+
+console.log(d3.extent(raw, d => +d.Index))
 
 // set the dimensions and margins of the graph
 const margin = {top: 10, right: 30, bottom: 30, left: 50},
