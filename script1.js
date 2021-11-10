@@ -28,15 +28,7 @@ raw = d3.csv("https://raw.githubusercontent.com/piper-of-dawn/technical_analysis
     return { Date : d3.timeParse("%Y-%m-%d")(d.Date)}
   });
 
-raw = d3.csv("https://raw.githubusercontent.com/piper-of-dawn/technical_analysis/main/raw.csv",  function(d){
-    return { Date : d3.timeParse("%Y-%m-%d")(d.Date),
-             Qtr: quarter(d.Date),
-             Htpts: +d.htpts,
-             four_DMA: +d.four_DMA,
-             nine_DMA: +d.nine_DMA,
-             thirteen_DMA: +d.thirteen_DMA,
-  }
-  });
+
 
 
 

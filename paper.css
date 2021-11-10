@@ -11,3 +11,399 @@
 #trend { grid-area: trend; }
 #seasonality { grid-area: seasonality; }
 #residual { grid-area: residual; }
+
+html {
+    scroll-behavior: smooth;
+}
+strong {
+    font-weight: bold;
+}
+mjx-container {
+    /*text-shadow: 0.05px 0.04px rgba(0, 0, 0, 0.64) ;*/
+}
+body {
+    text-rendering: optimizeLegibility;
+    margin: 0 !important;
+    color: rgba(0, 0, 0, 0.84) ;
+    text-align: justify;
+    height: 100%;
+    font-weight: 100;
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 21px;
+  font-family: "Segoe UI Light", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  
+}
+.cover {
+ width: 520px;
+ top: 5%;
+
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: normal;
+font-weight: 300;
+font-size: 5vmin;
+line-height: 1.5em;
+visibility: visible;
+box-sizing: border-box;
+border: 0;
+padding: 1rem 2rem;
+align-self: center;
+margin-top: 49px;
+
+}
+
+.cover > h1 {
+  text-align: left;
+
+}
+.cover > h4{
+
+  font-size: 2.6vmin;
+  text-align: left;
+  background-color: #f7f9fb;
+  padding-left: 1%;
+    padding-right: 1%;
+  width: max-content;
+  font-weight: 400;
+
+
+
+}
+
+
+/*.cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #f7f9fb;}
+
+.cover:after {
+content: "";
+  position: absolute;
+  right: -10px;
+  bottom: -1px;
+  border-left-color: #fff;
+  border-left-style: solid;
+  border-left-width: calc(100vw + 10px);
+  border-top: 12vw solid transparent;
+}*/
+
+
+img{ width:100%; height: auto; }
+
+
+article {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+
+
+.longform {
+
+    width: 52%;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: normal;
+
+}
+
+:root {
+    --timing: ease
+}
+
+
+.remark {
+  display: flex;
+  flex-direction: column;
+margin-left: auto;
+margin-right: auto;
+  font-size: 16px;
+border-top: 2px solid #ddd;
+border-bottom: 2px solid #ddd;
+margin: 64px 0;
+align-self: center;
+}
+
+
+.remark > p{
+ text-align: justify;
+ margin-left: 5%;
+}
+
+.remark > h4 {
+  word-wrap: break-word;
+width: fit-content;
+font-size: 16px;
+
+font-weight: 400;
+margin-bottom: 0.5%;
+    text-align: left;
+    background-color: #f7f4fb;
+    padding: 1%;
+}
+
+button#print{
+    height: 25px;
+    width: 70px;
+    position: absolute;
+   z-index: 100;
+   margin-top: 50px;
+  background-color: transparent;
+border: none;
+}
+
+* {
+    box-sizing: border-box
+}
+
+   ::-webkit-scrollbar
+    {
+      width: 8px;  /* for vertical scrollbars */
+height: 0px;
+
+
+    }
+       ::-webkit-scrollbar:hover
+    {
+color: #000;      
+height: 12px; /* for horizontal scrollbars */
+
+    }
+    
+    ::-webkit-scrollbar-track
+    {
+      background: rgba(0, 0, 0, 0);
+    }
+    
+    ::-webkit-scrollbar-thumb
+    {
+      background: rgba(0, 0, 0, 0.5);
+      transition-duration: 0.5s;
+      transition-timing-function: ease;
+    }
+
+   ::-webkit-scrollbar-thumb:hover{
+          background: rgba(0, 0, 0, 0.8);
+                
+   }
+.toc {
+    position: sticky;
+top: 3%;
+    left: 3em;
+    padding: 1em;
+    width: 25em;
+    line-height: 2;
+    font-size: 16px;
+    background-color: #f7f9fb;
+    height: 100%;
+    text-align: left;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+ul>li {
+    margin-left: 2rem;
+}
+
+
+
+.toc li a {
+    display: inline-block;
+    color: #aaa;
+    text-decoration: none;
+    transition: all .3s cubic-bezier(.23, 1, .32, 1)
+}
+
+.toc li.visible>a {
+    color: rgb(11, 23, 17);
+    transform: translate(5px);
+    font-weight: 400;
+}
+
+.toc-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1
+}
+
+.toc-marker path {
+    transition: all .3s ease
+}
+
+.bg-note {
+    background-color: lemonchiffon;
+    padding: 2%;
+    margin-top: 5%;
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: .75em 0
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: .83em 0
+}
+
+h5 {
+    font-size: 1em;
+    margin: 1.5em 0
+}
+
+h6 {
+    font-size: 1em;
+    margin: 1.67em 0
+}
+
+
+h6 {
+    font-style: italic;
+}
+
+@media only screen and (max-width: 600px) {
+    .toc {
+        visibility: hidden;
+    }
+
+    article {
+        display: block;
+
+        padding: 1%;
+    }
+
+    .longform {
+        padding: 3%;
+        width: 90%;
+
+    }
+}
+
+::selection {
+    background: #FFF9C1;
+}
+
+
+.highlight {
+
+    background: linear-gradient(104deg, rgba(255, 250, 150, 0.05) 1.9%, rgba(255, 250, 150, 1.25) 2.4%, rgba(255, 250, 150, 0.5) 5.8%, rgba(255, 250, 150, 0.1) 93%, rgba(255, 250, 150, 0.7) 96%, rgba(130, 255, 1732, 0) 98%), linear-gradient(183deg, rgba(255, 250, 150, 0) 0%, rgba(255, 250, 150, 0.3) 7.9%, rgba(255, 250, 150, 0) 15%);
+
+border-radius: 9.5px;
+    width: max-content;
+    margin-left: auto; margin-right:auto;
+    padding-left: 10px;     padding-right: 10px;
+
+}
+
+
+
+
+underline {
+  --color1: DarkCyan;
+  --color2: DarkCyan;
+  --bg-height: 10%;
+    
+  all: unset;
+  background-image: linear-gradient(var(--color1), var(--color2));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 var(--bg-height);
+  animation: highlight 2800ms 1 ease-out;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+
+@keyframes highlight {
+  to {
+    background-size: 100% var(--bg-height);
+  }
+}
+
+                        }   
+
+
+h1,
+h2,
+p,
+i,
+a,
+.first-letter,
+.authorName a {
+  color: rgba(0, 0, 0, 0.84);
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-family: Segoe UI Light", serif;
+  font-size: 48px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-family: "Segoe UI Light", sans-serif;
+  font-size: 31px;
+  padding: 0;
+  text-align: left;
+  line-height: 34.5px;
+  font-weight: normal;
+}
+
+p {
+  margin-top: 21px;
+
+
+}
+
+a {
+  text-decoration: underline;
+}
+
+blockquote {
+  font-family: "Segoe UI Light", serif;
+  font-size: 30px;
+  font-style: italic;
+  letter-spacing: -0.36px;
+  line-height: 44.4px;
+  overflow-wrap: break-word;
+  margin: 55px 0 33px 0;
+  /* text-align: center; */
+  color: rgba(0, 0, 0, 0.68);
+  padding: 0 0 0 50px;
+}
+
+code {
+  font-size: 18px;
+  background: rgba(0,0,0,.05);
+  border-radius: 2px;
+  padding: 3px 5px;
+}

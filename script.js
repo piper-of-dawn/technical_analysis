@@ -33,7 +33,7 @@ raw.then(function(data){
 function update(data){ 
 
 // Create the X axis:
-  x.domain(d3.extent(data, function(d) { return d.Index }));
+  x.domain(d3.extent(data, function(d) { return +d.Index }));
   
 
 svg.selectAll(".myXaxis").transition()
@@ -47,7 +47,7 @@ svg.selectAll(".myXaxis").transition()
 var yx=data.columns[y_id];
 console.log(data.columns[y_id])
 
-  y.domain([0, d3.max(data, function(d) { return +d[yx]})]);
+  y.domain(d3.extent (data, function(d) { return +d[yx]}));
   svg.selectAll(".myYaxis")
     .transition()
     .duration(3000)
@@ -66,7 +66,7 @@ console.log(data.columns[y_id])
     .transition()
     .duration(3000)
     .attr("d", d3.line()
-      .x(function(d) { return x(d.Index); })
+      .x(function(d) { return x(+d.Index); })
       .y(function(d) { return y(d[yx]); })
         .curve(d3.curveCatmullRom))
       .attr("fill", "none")
