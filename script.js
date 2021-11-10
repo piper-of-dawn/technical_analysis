@@ -33,7 +33,7 @@ raw.then(function(data){
 function update(data){ 
 
 // Create the X axis:
-  x.domain(d3.extent(data, function(d) { return d.Date }));
+  x.domain(d3.extent(data, function(d) { return d.Index }));
   
 
 svg.selectAll(".myXaxis").transition()
@@ -44,8 +44,8 @@ svg.selectAll(".myXaxis").transition()
 /*if(y_data == "nine"){
   console.log(d3.max(data.columns[2]))
 }*/
-var yx=data.columns[1];
-//console.log(yx)
+var yx=data.columns[y_id];
+console.log(data.columns[y_id])
 
   y.domain([0, d3.max(data, function(d) { return +d[yx]})]);
   svg.selectAll(".myYaxis")
@@ -66,7 +66,7 @@ var yx=data.columns[1];
     .transition()
     .duration(3000)
     .attr("d", d3.line()
-      .x(function(d) { return x(d.Date); })
+      .x(function(d) { return x(d.Index); })
       .y(function(d) { return y(d[yx]); })
         .curve(d3.curveCatmullRom))
       .attr("fill", "none")
@@ -83,7 +83,7 @@ update(data);
 }
 
 // At the beginning, I run the update function on the first dataset:
-create(2);
+create(13);
 
 
 
