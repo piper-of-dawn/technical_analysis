@@ -1,0 +1,13 @@
+.grid {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 25px 0px; 
+  grid-template-areas: 
+    "trend"
+    "seasonality"
+    "residual"; 
+}
+#trend { grid-area: trend; }
+#seasonality { grid-area: seasonality; }
+#residual { grid-area: residual; }

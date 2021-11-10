@@ -10,9 +10,10 @@
 
 <script>
 
+
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
+    width = 1000 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -25,11 +26,21 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/piper-of-dawn/technical_analysis/main/raw.csv", function(data) {
+
+
+
+var colors = d3.scaleQuantize()
+    .domain(d3.extent(data, d=>+d.error))
+    .range(["#5E4FA2", "#3288BD", "#66C2A5", "#ABDDA4", "#E6F598", 
+    "#FFFFBF", "#FEE08B", "#FDAE61", "#F46D43", "#D53E4F", "#9E0142"]);
+
+
+console.log(colors(0))
 
   // Add X axis
   var x = d3.scaleLinear()
-    .domain([4, 8])
+    .domain(d3.extent(data, d=>+d.Steps)).nice()
     .range([ 0, width ]);
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
@@ -37,15 +48,15 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/ir
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, 9])
+    .domain(d3.extent(data, d=>+d.error)).nice()
     .range([ height, 0]);
   svg.append("g")
     .call(d3.axisLeft(y));
 
   // Color scale: give me a specie name, I return a color
-  var color = d3.scaleOrdinal()
-    .domain(["setosa", "versicolor", "virginica" ])
-    .range([ "#440154ff", "#21908dff", "#fde725ff"])
+  //var color = d3.scaleOrdinal()
+    //.domain(["setosa", "versicolor", "virginica" ])
+    //.range([ "#440154ff", "#21908dff", "#fde725ff"])
 
   // Add dots
   svg.append('g')
@@ -53,10 +64,10 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/ir
     .data(data)
     .enter()
     .append("circle")
-      .attr("cx", function (d) { return x(d.Sepal_Length); } )
-      .attr("cy", function (d) { return y(d.Petal_Length); } )
+      .attr("cx", function (d) { return x(+d.Steps); } )
+      .attr("cy", function (d) { return y(+d.error); } )
       .attr("r", 5)
-      .style("fill", function (d) { return color(d.Species) } )
+      .style("fill", function (d) { return colors(+d.error) } )
 
 })
 
