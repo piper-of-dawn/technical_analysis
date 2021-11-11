@@ -26,11 +26,20 @@ raw = d3.csv("https://raw.githubusercontent.com/piper-of-dawn/technical_analysis
 
 function create (y_id){
 
+
 raw.then(function(data){
 
 
+//var weekdayMetrics = d3.group(data, d=>d.Weekday)
+
+
+var test = d3.rollup(data, v => d3.mean(v, d => d.htpts), d => d.Weekday)  
+console.log(test);
 
 function update(data){ 
+
+
+
 
 // Create the X axis:
   x.domain(d3.extent(data, function(d) { return +d.Index }));
